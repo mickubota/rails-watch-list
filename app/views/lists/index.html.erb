@@ -1,0 +1,9 @@
+<h1>Index</h1>
+<div class="card">
+      <ul><% @lists.each do |list| %>
+        <li><%= link_to "#{list.name}", list_path(list.id) %></li>
+          <% end %>
+      </ul>
+</div>
+
+<%= render "form" %>
