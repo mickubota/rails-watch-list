@@ -1,5 +1,6 @@
 .card-category {
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   height: 200px;
   display: flex;
@@ -11,6 +12,7 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   color: #ecf0f1;
+  position: relative;
 }
 
 .card-title-bottom {
@@ -18,20 +20,22 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
+/*   position: absolute; */
+  bottom: 4;
+  right: 6;
 }
 
 
 .card-title-bottom-custom {
-  padding: 16px;
-  position: relative;
+  padding: 5px;
+  position: absolute;
 }
 
 
 
 .card-title-bottom h2 {
   color: white;
-  text-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-shadow: 0 0 15px rgba(124, 108, 108, 0.2);
 }
 
 
