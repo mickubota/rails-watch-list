@@ -1,6 +1,7 @@
 <div class="simple-form search">
   <%= simple_form_for @list do |f| %>
       <%= f.input :name %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit class: "btn btn-dark mg-2" %>
   <% end %>
 </div>

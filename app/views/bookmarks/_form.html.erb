@@ -5,5 +5,6 @@
     <%= f.association :movie %>
     <%= f.submit class: "btn btn-dark mg-2" %>
 <% end %>
-<li><%= link_to "Home", lists_path %> </li>
+<br>
+<%= link_to lists_path do %> <div class="btn btn-dark mg-2"> Go back </div> <% end %>
 </div>
