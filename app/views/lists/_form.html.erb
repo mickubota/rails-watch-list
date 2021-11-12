@@ -1,4 +1,6 @@
-<%= simple_form_for @list do |f| %>
-    <%= f.input :name %>
-    <%= f.submit class: "btn btn-dark mg-2" %>
-<% end %>
+<div class="simple-form search">
+  <%= simple_form_for @list do |f| %>
+      <%= f.input :name %>
+      <%= f.submit class: "btn btn-dark mg-2" %>
+  <% end %>
+</div>

@@ -2,7 +2,6 @@ class ListsController < ApplicationController
   def index
     @lists = List.all
     @list = List.new
-    @movie = Movie.new
     # todo
   end
 
@@ -14,13 +13,14 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @bookmark = Bookmark.new
     # todo
   end
 
   def create
     @list = List.new(strong_params)
     if @list.save
-      redirect_to lists_path
+      redirect_to list_path(@list)
     else
       @lists = List.all
       render :index

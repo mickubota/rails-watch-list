@@ -1,0 +1,9 @@
+<div class="simple-form search">
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+    <%= f.submit class: "btn btn-dark mg-2" %>
+<% end %>
+<li><%= link_to "Home", lists_path %> </li>
+</div>

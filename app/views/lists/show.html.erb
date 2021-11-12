@@ -1,2 +1,23 @@
-<h1><%= @list.name %></h1>
-<li><%= link_to "#See movies", list_path(@list.id) %></li>
+<%= render "banner" %>
+
+<div class="container">
+<h1>Bookmark page for <%= @list.name %></h1>
+  <div class="cards">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card">
+      <%= image_tag bookmark.movie.poster_url %>'
+        <div class="card-body bg-dark text-white">
+          <h2><%= bookmark.movie.title %> </h2>
+          <%= bookmark.comment %>
+          <%= link_to "Delete bookmark?", bookmark_path(bookmark), method: :delete, data: { confirm: "Remove #{bookmark.movie.title}?" }%> </li>
+        </div>
+      </div>
+      <% end %>
+  </div>
+    <%= render "/bookmarks/form" %>
+  </div>
+</div>
+
+
+
+<%# aaas <%= render "carousel" %>

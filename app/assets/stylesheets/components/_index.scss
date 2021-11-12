@@ -2,3 +2,20 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+// @import "netflix_carousel";
+@import "cards_grid";
+@import "card-category";
+@import "unique_fonts";
+@import "banner";
+@import "search-form";
+@import "navbar";
+@import "card-trip";
+
+body, html {
+  padding: 0 10px;
+  margin: 0;
+  background: #0E0F11;
+  color: #ecf0f1;
+  min-height: 100vh;
+  width: 100%;
+}
