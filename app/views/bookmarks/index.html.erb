@@ -1,5 +1,4 @@
 
-<%= render "navbar" %>
 <%= render "banner" %>
 
 <div class="container">
@@ -10,10 +9,10 @@
         <div class="card-category" style="background-image: url('<%= bookmark.movies.poster_url %>')">
         <div class="card-title-bottom"><h2><%= bookmark.movies.name %></h2></div>
       </div>
+      <% else %>
         <div class="card-category">
           <div class="card-title-bottom"><h2><%= "No movies yet!" %></h2></div>
-          <% end %>
-        </div>
+      </div>
       <% end %>
     <% end %>
   </div>

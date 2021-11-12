@@ -21,7 +21,7 @@ class BookmarksController < ApplicationController
       @list = List.find(params[:list_id])
       @bookmarks = @list.bookmarks
       @bookmark = Bookmark.new
-      render :index
+      render "lists/show.html.erb"
     end
     # todo
   end
