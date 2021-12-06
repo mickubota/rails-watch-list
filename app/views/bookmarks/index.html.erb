@@ -1,46 +1,40 @@
-<div class="d-flex">
-  <%= render "banner" %>
-  <div class="container">
-
-    <div class="container">
-      <h1>Lists of movies</h1>
-      <div class="cards mb-5">
-        <% @booksmarks.each do |bookmark| %>
-          <% if bookmark.movies.any? %>
-            <div class="card-category" style="background-image: url('<%= bookmark.movies.poster_url %>')">
-            <div class="card-title-bottom"><h2><%= bookmark.movies.name %></h2></div>
+    
+<div class="container">
+  <h1>Lists of movies</h1>
+  <div class="cards mb-5">
+    <% @booksmarks.each do |bookmark| %>
+      <% if bookmark.movies.any? %>
+        <div class="card-category" style="background-image: url('<%= bookmark.movies.poster_url %>')">
+          <div class="card-title-bottom">
+            <h2><%= bookmark.movies.name %></h2>
           </div>
-          <% else %>
-            <div class="card-category">
-              <div class="card-title-bottom"><h2><%= "No movies yet!" %></h2></div>
+        </div>
+      <% else %>
+        <div class="card-category">
+          <div class="card-title-bottom">
+            <h2><%= "No movies yet!" %></h2>
           </div>
-          <% end %>
-        <% end %>
-      </div>
-      <%= render "form" %>
-    </div>
-
-
-    <div class="container">
-    <h1>Bookmark page for <%= @list.name %></h1>
-      <div class="cards">
-        <ul><% @bookmarks.each do |bookmark| %>
-          <div class="card-category">
-            <div class="card">
-
-            </div>
-            <li><%= bookmark.movie.title %> </li>
-            <li><%= bookmark.comment %></li>
-            <li><%= link_to bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" }%> <i class="far fa-trash-alt"></i> <% end %> </li>
-            <br>
-          </div>
-          <% end %>
-        </ul>
-      </div>
-    <%= link_to "add movies", new_list_bookmark_path %>
-    </div>
-
-
-    <%= render "form" %>
-  <div class="container">
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <%= render "form" %>
 </div>
+<div class="container">
+  <h1>Bookmark page for <%= @list.name %></h1>
+  <div class="cards">
+    <ul><% @bookmarks.each do |bookmark| %>
+        <div class="card-category">
+          <div class="card">
+          </div>
+          <li><%= bookmark.movie.title %> </li>
+          <li><%= bookmark.comment %></li>
+          <li><%= link_to bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" }%> <i class="far fa-trash-alt"></i> <% end %> </li>
+        <br>
+      </div>
+    <% end %>
+  </ul>
+</div>
+<%= link_to "add movies", new_list_bookmark_path %>
+</div>
+<%= render "form" %>

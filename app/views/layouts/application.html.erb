@@ -4,18 +4,20 @@
     <title>RailsWatchList</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display+SC&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class="main-container">
+      <div class="col-4">
+        <%= render "banner" %>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>

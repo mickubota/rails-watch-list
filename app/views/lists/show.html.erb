@@ -1,25 +1,11 @@
-<div class="d-flex">
-  <%= render "banner" %>
-  <div class="container">
-    <br>
-    <br>
-    <h1>Bookmark page for <%= @list.name %></h1>
-      <div class="cards">
-        <% @list.bookmarks.each do |bookmark| %>
-          <div class="card">
-          <%= image_tag bookmark.movie.poster_url %>'
-            <div class="card-body bg-dark text-white">
-              <h2><%= bookmark.movie.title %> </h2>
-              <%= bookmark.comment %>
-              <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure,bro?" }%> </li>
-            </div>
-          </div>
-          <% end %>
-      </div>
-      </div>
-    <%= render "/bookmarks/form" %>
+<h1><%= @list.name %></h1>
+<div class="container">
+  <div class="cards">
+    <% @list.bookmarks.each do |bookmark| %>
+      <%= render "bookmark_card", bookmark: bookmark %>
+    <% end %>
+  </div>
 </div>
-
-
-
-<%# aaas <%= render "carousel" %>
+<div class="container">
+  <%= render "bookmarks_form" %>
+</div>

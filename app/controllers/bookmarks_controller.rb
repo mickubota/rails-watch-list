@@ -1,8 +1,8 @@
 class BookmarksController < ApplicationController
   def index
-    @bookmarks = Bookmark.where(list: params[:list_id])
-    @list = List.find(params[:list_id])
-    @bookmark = Bookmark.new
+    # @bookmarks = Bookmark.where(list: params[:list_id])
+    # @list = List.find(params[:list_id])
+    # @bookmark = Bookmark.new
   end
 
   # def new
@@ -21,7 +21,7 @@ class BookmarksController < ApplicationController
       @list = List.find(params[:list_id])
       @bookmarks = @list.bookmarks
       @bookmark = Bookmark.new
-      render "lists/show.html.erb"
+      render "lists/show"
     end
     # todo
   end

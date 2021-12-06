@@ -1,0 +1,7 @@
+<div class="card-trip">
+  <%= image_tag bookmark.movie.poster_url %>'
+  <div class="card-trip-infos">
+    <h2><%= bookmark.movie.title %> </h2>
+    <%= bookmark.comment %>
+    <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" }%> </li>
+</div>

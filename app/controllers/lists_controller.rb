@@ -2,19 +2,16 @@ class ListsController < ApplicationController
   def index
     @lists = List.all
     @list = List.new
-    # todo
   end
 
   def new
     @list = List.new
     @movie = Movie.new
-    # todo
   end
 
   def show
     @list = List.find(params[:id])
     @bookmark = Bookmark.new
-    # todo
   end
 
   def create
@@ -25,7 +22,6 @@ class ListsController < ApplicationController
       @lists = List.all
       render :index
     end
-      # todo
   end
 
   def edit
@@ -36,7 +32,6 @@ class ListsController < ApplicationController
     else
       render :show
     end
-      # todo
   end
 
   def update

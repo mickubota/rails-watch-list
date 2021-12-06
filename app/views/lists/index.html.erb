@@ -1,40 +1,15 @@
-<div class="d-flex">
-  <%= render "banner" %>
+<div class="col-8">
   <div class="container">
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1>Lists of lists</h1>
-    <div class="cards mb-5">
-      <% @lists.each do |list| %>
-        <% if list.photo.present? %>
-            <div class="card-category" style="background-image: url('<%= cl_image_path list.photo.key %>')">
-            <%= link_to list_path(list.id) do %>
-            <div class="card-title-bottom"><h2><%= list.name %></h2></div>
-            </div>
-            <% end %>
-        <% elsif list.movies.any? %>
-          <div class="card-category" style="background-image: url('<%= list.movies.sample.poster_url %>')">
-          <%= link_to list_path(list.id) do %>
-          <div class="card-title-bottom"><h2><%= list.name %></h2></div>
-          <% end %>
-        </div>
-        <% else %>
-          <div class="card-category">
-            <%= link_to list_path(list.id) do %>
-            <div class="card-title-bottom"><h2><%= list.name %></h2></div>
-            <% end %>
-          </div>
+    <div class="row">
+      <h1>Favorites' lists </h1>
+      <div class="cards mb-5">
+        <% @lists.each do |list| %>
+          <%= render "list_card", list: list %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-
-  </div>
-</div>
-
-<div class="container">
-  <div class="card-category">
-    <%= render "form" %>
+    <div class="row">
+      <%= render "list_form" %>
+    </div>
   </div>
 </div>
