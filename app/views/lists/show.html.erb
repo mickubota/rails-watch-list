@@ -1,11 +1,13 @@
-<h1><%= @list.name %></h1>
 <div class="container">
-  <div class="cards">
-    <% @list.bookmarks.each do |bookmark| %>
-      <%= render "bookmark_card", bookmark: bookmark %>
-    <% end %>
+  <div class="row">
+    <h1><%= @list.name %></h1>
+    <div class="cards mb-5">
+      <% @list.bookmarks.each do |bookmark| %>
+        <%= render "bookmark_card", bookmark: bookmark %>
+      <% end %>
+    </div>
   </div>
-</div>
-<div class="container">
-  <%= render "bookmarks_form" %>
+  <div class="row">
+    <%= render "bookmarks_form" %>
+  </div>
 </div>

@@ -11,7 +11,7 @@
 @import "navbar";
 @import "card-trip";
 
-body, html {
+body, a, html {
   padding: 0 10px;
   margin: 0;
   background: #0E0F11;
@@ -22,4 +22,15 @@ body, html {
 
 .main-container {
   display: flex;
+  flex-direction: row;
+}
+
+a:hover {
+  color: #fff;
+}
+
+@media (max-width: 1000px) {
+  .main-container {
+    flex-direction: column;
+  }
 }

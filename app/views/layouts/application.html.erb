@@ -14,10 +14,12 @@
   </head>
   <body>
     <div class="main-container">
-      <div class="col-4">
-        <%= render "banner" %>
+      <div class="col-12 col-lg-4">
+        <%= render "layouts/banner" %>
       </div>
-      <%= yield %>
+      <div class="col-12 col-lg-8">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

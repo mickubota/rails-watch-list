@@ -1,27 +1,12 @@
-<% if list.photo.present? %>
-  <div class="card-trip">
+<div class="card-trip">
+  <% if list.photo.present? %>
     <img src= "<%=cl_image_path(list.photo.key)%>">
-    <%= link_to list_path(list.id) do %>
-      <div class="card-trip-infos">
-        <h4><%= list.name %></h4>
-      </div>
-    </div>
-  <% end %>
-<% elsif list.movies.any? %>
-  <div class="card-trip">
+  <% elsif list.movies.any? %>
     <img src = "<%=list.movies.sample.poster_url%>">
-    <%= link_to list_path(list.id) do %>
-      <div class="card-trip-infos">
-        <h4><%= list.name %></h4>
-      </div>
+  <% end %>
+  <%= link_to list_path(list.id) do %>
+    <div class="card-trip-infos">
+      <h4><%= list.name %></h4>
     <% end %>
   </div>
-<% else %>
-  <div class="card-trip">
-    <%= link_to list_path(list.id) do %>
-      <div class="card-trip-infos">
-        <h2><%= list.name %></h2>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+</div>
