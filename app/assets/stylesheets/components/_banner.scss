@@ -10,6 +10,13 @@
   top: 0;
 }
 
+@media (max-width: 1000px) {
+  .banner {
+    height: 10vh;
+    width: 100%;
+  }
+}
+
 
 
 .banner h2 {
